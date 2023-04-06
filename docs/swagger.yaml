@@ -1,0 +1,45 @@
+basePath: /
+definitions:
+  res.Response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      msg:
+        type: string
+    type: object
+  user_api.UserLoginRequest:
+    properties:
+      password:
+        type: string
+      user_name:
+        type: string
+    type: object
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  description: API文档
+  title: API文档
+  version: "1.0"
+paths:
+  /api/login:
+    post:
+      description: 登录，返回token
+      parameters:
+      - description: 登录的一些参数
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/user_api.UserLoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/res.Response'
+      summary: 登录，返回token
+      tags:
+      - 用户管理
+swagger: "2.0"

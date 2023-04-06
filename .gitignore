@@ -1,0 +1,5 @@
+log/*
+.air.toml
+/tmp
+.idea
+main

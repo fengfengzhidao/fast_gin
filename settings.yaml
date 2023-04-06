@@ -1,0 +1,25 @@
+mysql:
+  host: # 如果不配置host就不会连接 mysql
+  port: "3306"
+  config: charset=utf8mb4&parseTime=True&loc=Local
+  db: test_db
+  username: root
+  password: root
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: error
+logger:
+  level: info
+  prefix: '[fast_gin]'
+  director: log
+  show-line: true
+  log-in-console: true
+jwy:
+  secret: agjuysdjgn763jsadgbj7bjbsahg
+  expires: 20
+  issuer: "fast_gin"
+system:
+  env: release # debug  release  test
+  ip: 127.0.0.1
+  port: 8080
+  version: 1.0.1
