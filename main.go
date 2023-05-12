@@ -38,6 +38,7 @@ func main() {
 		MaxHeaderBytes: 1 << 20,
 	}
 	global.LOG.Infof("服务运行在：http://%s", addr)
+
 	global.LOG.Infof("api接口文档运行在：http://%s/swagger/index.html", addr)
 
 	s.ListenAndServe().Error()
